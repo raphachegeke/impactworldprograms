@@ -42,38 +42,13 @@
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid top-bar wow fadeIn" data-wow-delay="0.1s">
         <div class="row align-items-center h-100">
-            <div class="col-lg-4 text-center text-lg-start">
+            <div style="display: flex; margin-top: 16px">
+                <img width="60px" src="img/logo.png" alt="Image">
                 <a href="index.html">
                     <h1 class="display-5 text-primary m-0">Impact World Programs</h1>
                 </a>
-            </div>
-            <div class="col-lg-8 d-none d-lg-block">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="d-flex justify-content-end">
-                            <div class="flex-shrink-0 btn-square bg-primary">
-                                <i class="fa fa-phone-alt text-dark"></i>
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="text-primary mb-0">Call Us</h6>
-                                <span class="text-white">0711517947</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="d-flex justify-content-end">
-                            <div class="flex-shrink-0 btn-square bg-primary">
-                                <i class="fa fa-envelope-open text-dark"></i>
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="text-primary mb-0">Mail Us</h6>
-                                <span class="text-white">admin@impactworldprograms.org</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -81,7 +56,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
                 <h4 class="d-lg-none m-0">Menu</h4>
@@ -204,7 +179,7 @@ The Power of Education: Empowering Teenage Girls Through Knowledge and Lifelong 
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                            <img class="w-100" src="img/carousel-3.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
