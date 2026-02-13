@@ -73,7 +73,7 @@
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <a href="event.html" class="nav-item nav-link">Events</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                        <a href="waste.html" class="nav-item nav-link">Waste Management</a>
+                        <a href="waste.html" class="nav-item nav-link">Widows & Poverty</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light m-0">
@@ -190,7 +190,8 @@
                                 <i class="fa fa-hospital fa-2x text-secondary"></i>
                             </div>
                             <h3>Health Care</h3>
-                            <p class="mb-2">Mobile medical clinics and health education programs bringing essential services to underserved populations.</p>
+                            <p class="mb-2">Mobile medical clinics and health education programs bringing essential services to underserved populations. <br/><br/>
+                            Gude and Counsel health care givers sensitize on hereditary diseases like sicle cell chronic diseases and care for old age too.</p>
                             <a href="#!">Read More</a>
                         </div>
                     </div>
@@ -200,7 +201,8 @@
                                 <i class="fa fa-hands-holding-child fa-2x text-secondary"></i>
                             </div>
                             <h3>Social Care</h3>
-                            <p class="mb-2">Support networks and counseling services for vulnerable families, elderly individuals, and at-risk youth.</p>
+                            <p class="mb-2">Support networks and counseling services for vulnerable families, elderly individuals, and at-risk youth.
+                            </p>
                             <a href="#!">Read More</a>
                         </div>
                     </div>
