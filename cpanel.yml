@@ -1,0 +1,5 @@
+name: my-website
+tasks:
+  - git-branch: main       # branch you want to deploy from
+    destination: public_html  # deploy directly to main site folder
+    type: git
