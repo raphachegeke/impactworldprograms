@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    # Set the deployment path
+    - export DEPLOYPATH=/home/impactwo/public_html/
+
+    # Copy all files in root except hidden ones
+    - for file in *; do /bin/cp -R "$file" $DEPLOYPATH; done
