@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Impact World Programs</title>
+    <title>Payment - Impact World Programs</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,6 +30,146 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .payment-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .amount-btn {
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 12px;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        .amount-btn:hover,
+        .amount-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .custom-amount-input {
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .custom-amount-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(21, 97, 107, 0.2);
+        }
+
+        .donor-input {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .donor-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(21, 97, 107, 0.15);
+        }
+
+        .paypal-container {
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 30px 0;
+        }
+
+        .total-display {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a7a8a 100%);
+            border-radius: 16px;
+            padding: 24px;
+            color: white;
+        }
+
+        .cause-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            background: rgba(21, 97, 107, 0.05);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+            padding: 20px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .loading-text {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .secure-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,7 +206,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav me-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Service</a>
                         <a href="donation.html" class="nav-item nav-link">Donation</a>
@@ -74,16 +214,6 @@
                         <a href="event.html" class="nav-item nav-link">Events</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                         <a href="waste.html" class="nav-item nav-link">Widows & Poverty</a>
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="event.html" class="dropdown-item">Event</a>
-                                <a href="feature.html" class="dropdown-item">Feature</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="d-none d-lg-flex ms-auto">
                         <a class="btn btn-square btn-dark ms-2" href="https://x.com/impact_world_p"><i
@@ -103,11 +233,12 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-4">
-            <h1 class="display-3 animated slideInDown">Donation</h1>
+            <h1 class="display-3 animated slideInDown">Make a Payment</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Donation</li>
+                    <li class="breadcrumb-item"><a href="donation.html">Donation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Payment</li>
                 </ol>
             </nav>
         </div>
@@ -115,406 +246,223 @@
     <!-- Page Header End -->
 
 
-    <!-- Video Start -->
-    <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-lg-11">
-                    <div class="h-100 py-5 d-flex align-items-center">
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="img/gallery/video.mp4" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h3 class="ms-5 mb-0">Together, we can build a world where everyone has the chance to thrive.
-                        </h3>
-                    </div>
-                </div>
-                <div class="d-none d-lg-block col-lg-1">
-                    <div class="h-100 w-100 bg-secondary d-flex align-items-center justify-content-center">
-                        <span class="text-white" style="transform: rotate(-90deg);">Scroll Down</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video End -->
-
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
-                            allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
-    
-    
-<!-- Donate Start -->
-<div class="container-fluid donate py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-
-            <!-- Left Side -->
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
-                <div class="p-4 shadow rounded bg-light h-100">
-                    <h3 class="mb-4">Your Impact</h3>
-
-                    <p><i class="fa fa-check text-primary me-2"></i>$25: Enough to support one child for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$50: Can support two children for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$100: Can support four children for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$1000: Can support 40 children for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$5000: Can support 200 children for a month.</p>
-                    <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>$10000: Can support 400 children for a month.</p>
-                </div>
-            </div>
-
-            <!-- Right Side -->
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
-                <div class="p-4 shadow rounded bg-white h-100">
-                    <h3 class="mb-4">Pay Using the Details Below</h3>
-                    <h3 class="mb-4">Diamond Trust Bank (DTB)</h3>
-
-                    <h5>Paybill:</h5>
-                    <p class="fw-bold">4141713</p>
-
-                    <h5>Account No:</h5>
-                    <p class="mb-1">0933288002 — Dollar Account</p>
-                    <p class="mb-0">0933288001 — Shilling Account</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-    
-    
-    
-
-
-    <!--  <a style="color: white" class="btn btn-primary py-3 px-4 me-3" href="">READY TO DONATE WITH MOBILE MONEY</a> -->
-    <!-- Donation Start -->
+    <!-- Payment Section Start -->
     <div class="container-fluid py-5">
         <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Donation</p>
-                <h1 class="display-6 mb-4">Support Our Mission</h1>
-                <p>Thank you for considering a donation to Impact World Programs. Your support plays a crucial role in
-                    advancing our mission and making a positive impact on the communities we serve. By contributing to
-                    our cause, you become an integral part of a movement dedicated to enhance our services.
-                    <p />
-            </div>
-            <div class="row g-4">
-
-
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Empowering
-                                    Change</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Empowering Change</a>
-                            <p>Your donation directly empowers us to drive meaningful change in Kisumu, Kakamega and
-                                Busia counties. Whether it’s education, housing, food, or counselling, your support
-                                enables us to create lasting, positive transformations.
+            <div class="row g-5 justify-content-center">
+                
+                <!-- Main Payment Card -->
+                <div class="col-lg-8">
+                    <div class="payment-card p-4 p-md-5 wow fadeIn" data-wow-delay="0.1s">
+                        
+                        <!-- Info Banner -->
+                        <div class="info-card mb-4">
+                            <p class="mb-0"><i class="fa fa-heart text-primary me-2"></i>
+                                Your generosity helps us support children, families, and communities in need across Kenya. Every donation makes a difference.
                             </p>
                         </div>
+
+                        <!-- Step 1: Select Amount -->
+                        <div class="step-title">
+                            <div class="step-indicator">1</div>
+                            <h4 class="mb-0">Select Donation Amount</h4>
+                        </div>
+
+                        <!-- Preset Amounts -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-6 col-md-4">
+                                <button type="button" class="amount-btn w-100" data-amount="25">$25</button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button type="button" class="amount-btn w-100" data-amount="50">$50</button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button type="button" class="amount-btn w-100" data-amount="100">$100</button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button type="button" class="amount-btn w-100" data-amount="250">$250</button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button type="button" class="amount-btn w-100" data-amount="500">$500</button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button type="button" class="amount-btn w-100" data-amount="1000">$1,000</button>
+                            </div>
+                        </div>
+
+                        <!-- Custom Amount -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold mb-2">Or enter a custom amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary text-white border-0" style="border-radius: 12px 0 0 12px; padding: 14px 20px;">
+                                    <strong>$</strong>
+                                </span>
+                                <input type="number" class="form-control custom-amount-input border-start-0" 
+                                       id="customAmount" placeholder="Enter amount" min="1" style="border-radius: 0 12px 12px 0;">
+                            </div>
+                        </div>
+
+                        <!-- Donation Cause -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold mb-2">Select a Cause (Optional)</label>
+                            <select class="form-select donor-input" id="donationCause">
+                                <option value="general">General Donation</option>
+                                <option value="food">Healthy Food Program</option>
+                                <option value="health">Water Treatment & Health</option>
+                                <option value="education">Education Support</option>
+                                <option value="emergency">Emergency Relief</option>
+                                <option value="medical">Medical Outreach</option>
+                                <option value="women">Women Empowerment</option>
+                            </select>
+                        </div>
+
+                        <div class="section-divider"></div>
+
+                        <!-- Step 2: Donor Information -->
+                        <div class="step-title">
+                            <div class="step-indicator">2</div>
+                            <h4 class="mb-0">Your Information (Optional)</h4>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold mb-2">Full Name</label>
+                                <input type="text" class="form-control donor-input" id="donorName" placeholder="John Doe">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold mb-2">Email Address</label>
+                                <input type="email" class="form-control donor-input" id="donorEmail" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="anonymousDonation">
+                            <label class="form-check-label" for="anonymousDonation">
+                                Make this an anonymous donation
+                            </label>
+                        </div>
+
+                        <div class="section-divider"></div>
+
+                        <!-- Step 3: Payment -->
+                        <div class="step-title">
+                            <div class="step-indicator">3</div>
+                            <h4 class="mb-0">Complete Payment</h4>
+                        </div>
+
+                        <!-- Total Display -->
+                        <div class="total-display mb-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-1 opacity-75">Donation Amount</p>
+                                    <h2 class="mb-0" id="totalAmount">$0.00</h2>
+                                </div>
+                                <div class="text-end">
+                                    <span class="cause-badge" id="selectedCauseBadge">General Donation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secure Badge -->
+                        <div class="text-center mb-3">
+                            <span class="secure-badge">
+                                <i class="fa fa-lock"></i>
+                                Secure Payment via PayPal
+                            </span>
+                        </div>
+
+                        <!-- PayPal Button Container -->
+                        <div id="paypal-button-container" class="paypal-container">
+                            <p class="text-muted loading-text">
+                                <i class="fa fa-info-circle me-2"></i>
+                                Please select or enter an amount to continue
+                            </p>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="paymentError" class="alert alert-danger d-none mt-3" role="alert">
+                            <i class="fa fa-exclamation-circle me-2"></i>
+                            <span id="errorMessage"></span>
+                        </div>
+
                     </div>
                 </div>
 
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Impact Summary -->
+                    <div class="payment-card p-4 mb-4 wow fadeIn" data-wow-delay="0.3s">
+                        <h5 class="mb-4"><i class="fa fa-chart-line text-primary me-2"></i>Your Impact</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="fa fa-check-circle text-primary me-2 mt-1"></i>
+                                <span><strong>$25</strong> - Support one child for a month</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="fa fa-check-circle text-primary me-2 mt-1"></i>
+                                <span><strong>$50</strong> - Support two children for a month</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="fa fa-check-circle text-primary me-2 mt-1"></i>
+                                <span><strong>$100</strong> - Support four children for a month</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="fa fa-check-circle text-primary me-2 mt-1"></i>
+                                <span><strong>$500</strong> - Support 20 children for a month</span>
+                            </li>
+                            <li class="d-flex align-items-start">
+                                <i class="fa fa-check-circle text-primary me-2 mt-1"></i>
+                                <span><strong>$1,000</strong> - Support 40 children for a month</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Community
-                                    Impact</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Community Impact</a>
-                            <p>Impact World Programs is committed to making a difference at the grassroots level. Your
-                                donation helps us implement sustainable solutions, provide essential services, and
-                                uplift underprivileged individuals and families in need.
-                            </p>
+                    <!-- Bank Details -->
+                    <div class="payment-card p-4 mb-4 wow fadeIn" data-wow-delay="0.5s">
+                        <h5 class="mb-4"><i class="fa fa-university text-primary me-2"></i>Bank Transfer</h5>
+                        <p class="text-muted mb-3">Prefer bank transfer? Use our account details:</p>
+                        <div class="bg-light p-3 rounded">
+                            <p class="mb-2"><strong>Diamond Trust Bank (DTB)</strong></p>
+                            <p class="mb-1 small">Paybill: <strong>4141713</strong></p>
+                            <p class="mb-1 small">Dollar Account: <strong>0933288002</strong></p>
+                            <p class="mb-0 small">Shilling Account: <strong>0933288001</strong></p>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-3.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Transparency and
-                                    Accountability</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Transparency and Accountability</a>
-                            <p>We take pride in our commitment to transparency and accountability. Rest assured that
-                                your contribution will be utilized efficiently and effectively, directly benefiting
-                                those who need it most. Our financial records are open for scrutiny, and we provide
-                                regular updates on the impact of your generosity.
-                            </p>
-                        </div>
+                    <!-- Contact -->
+                    <div class="payment-card p-4 wow fadeIn" data-wow-delay="0.7s">
+                        <h5 class="mb-4"><i class="fa fa-question-circle text-primary me-2"></i>Need Help?</h5>
+                        <p class="text-muted mb-3">Questions about your donation?</p>
+                        <a href="contact.html" class="btn btn-outline-primary w-100">
+                            <i class="fa fa-envelope me-2"></i>Contact Us
+                        </a>
                     </div>
                 </div>
-
 
             </div>
         </div>
     </div>
-    <!-- Donation End -->
+    <!-- Payment Section End -->
 
 
-    <!-- Donate Start -->
-    <div class="container-fluid donate py-5">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
-                        <h1 class="display-6 mb-4">Let's Donate to Needy People for Better Lives</h1>
-                        <p class="fs-5 mb-0">Through your donations, we spread kindness and support to children,
-                            families, and communities struggling to find stability.</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 donate-form bg-primary py-5 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Ways to Donate</h1>
-                    <ol style="color: white">
-                        <li><strong style="color: black">One-Time Donation: </strong>Make a one-time contribution to
-                            support our immediate initiatives and projects.</li><br />
-                        <li><strong style="color: black">Monthly Giving: </strong>Join our monthly giving program to
-                            provide steady, ongoing support. Monthly donations create a stable foundation for long-term
-                            projects and sustained impact.</li><br />
-
-                        <li><strong style="color: black">Corporate Sponsorship: </strong>Partner with us through
-                            corporate sponsorship to align your brand with our mission and demonstrate your commitment
-                            to corporate social responsibility.</li><br />
-
-                        <li><strong style="color: black">In-Kind Donations: </strong>Non-monetary contributions, such as
-                            goods or services, are invaluable and can make a significant difference. Contact us to
-                            discuss potential in-kind contributions.</li><br />
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Donate End -->
-
-
-
-    <!-- Donation Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Donation</p>
-                <h1 class="display-6 mb-4">Our Donation Causes Around the World</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="85"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">85%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Food</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Healthy Food</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-body text-center p-5">
+                    <div class="mb-4">
+                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check text-success" style="font-size: 40px;"></i>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Water Treatment</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="75"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">75%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-3.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Education</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Education Support</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="85"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">85%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Food</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Emergency Relief Support</a>
-<p>Providing urgent assistance including food, shelter, and medical care during crisis situations.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Medical Outreach Program</a>
-<p>Supporting free medical camps, essential medicines, and preventive healthcare services.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="75"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">75%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-3.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Education</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Women Empowerment Initiative</a>
-<p>Equipping women and young girls with skills training, mentorship, and economic opportunities.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
+                    <h3 class="mb-3">Thank You!</h3>
+                    <p class="text-muted mb-4">Your donation of <strong id="donatedAmount">$0.00</strong> was successful. We truly appreciate your generosity in supporting our mission.</p>
+                    <p class="small text-muted mb-4">A confirmation email has been sent to your email address.</p>
+                    <a href="index.html" class="btn btn-primary px-4 py-2">Return to Home</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Donation End -->
-
-
-
-    <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
-                    <div class="position-relative w-100 mb-2">
-                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
-                            style="height: 60px;">
-                        <button type="button"
-                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter End -->
 
 
     <!-- Footer Start -->
@@ -580,12 +528,6 @@
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="fw-semi-bold" href="#!">Impact World Programs</a>, All Right Reserved.
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        
-                    </div>
                 </div>
             </div>
         </div>
@@ -608,7 +550,202 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-<script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <!-- PayPal SDK - Replace YOUR_CLIENT_ID with your actual PayPal Client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ado7r24S7wfBk4zFP0LJnqf7TU62kmhWMteCv-PiiR4IEpGOJz96spN6W5gM2aglsF15xpdMb6ZuhEgp&currency=USD&intent=capture"></script>
+
+    <script>
+        // State management
+        let selectedAmount = 0;
+        let paypalButtonsRendered = false;
+
+        // DOM Elements
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        const customAmountInput = document.getElementById('customAmount');
+        const totalAmountDisplay = document.getElementById('totalAmount');
+        const paypalContainer = document.getElementById('paypal-button-container');
+        const donationCause = document.getElementById('donationCause');
+        const selectedCauseBadge = document.getElementById('selectedCauseBadge');
+        const donorName = document.getElementById('donorName');
+        const donorEmail = document.getElementById('donorEmail');
+        const anonymousDonation = document.getElementById('anonymousDonation');
+        const paymentError = document.getElementById('paymentError');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Cause display names
+        const causeNames = {
+            'general': 'General Donation',
+            'food': 'Healthy Food Program',
+            'health': 'Water Treatment & Health',
+            'education': 'Education Support',
+            'emergency': 'Emergency Relief',
+            'medical': 'Medical Outreach',
+            'women': 'Women Empowerment'
+        };
+
+        // Format currency
+        function formatCurrency(amount) {
+            return '$' + parseFloat(amount).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Update total display
+        function updateTotalDisplay() {
+            totalAmountDisplay.textContent = formatCurrency(selectedAmount);
+        }
+
+        // Show error
+        function showError(message) {
+            errorMessage.textContent = message;
+            paymentError.classList.remove('d-none');
+        }
+
+        // Hide error
+        function hideError() {
+            paymentError.classList.add('d-none');
+        }
+
+        // Render PayPal buttons
+        function renderPayPalButtons() {
+            if (selectedAmount <= 0) {
+                paypalContainer.innerHTML = `
+                    <p class="text-muted loading-text">
+                        <i class="fa fa-info-circle me-2"></i>
+                        Please select or enter an amount to continue
+                    </p>
+                `;
+                paypalButtonsRendered = false;
+                return;
+            }
+
+            // Clear container
+            paypalContainer.innerHTML = '';
+
+            // Render PayPal buttons
+            paypal.Buttons({
+                style: {
+                    layout: 'vertical',
+                    color: 'blue',
+                    shape: 'rect',
+                    label: 'paypal',
+                    height: 50
+                },
+
+                // Create order
+                createOrder: function(data, actions) {
+                    hideError();
+                    
+                    // Validate
+                    if (selectedAmount < 1) {
+                        showError('Minimum donation amount is $1.00');
+                        return null;
+                    }
+
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: 'Donation to Impact World Programs - ' + causeNames[donationCause.value],
+                            amount: {
+                                currency_code: 'USD',
+                                value: selectedAmount.toFixed(2)
+                            },
+                            custom_id: JSON.stringify({
+                                cause: donationCause.value,
+                                donor_name: anonymousDonation.checked ? 'Anonymous' : (donorName.value || 'Anonymous'),
+                                donor_email: donorEmail.value || ''
+                            })
+                        }]
+                    });
+                },
+
+                // On approve
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // Show success modal
+                        document.getElementById('donatedAmount').textContent = formatCurrency(selectedAmount);
+                        
+                        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                        successModal.show();
+
+                        // Reset form
+                        selectedAmount = 0;
+                        updateTotalDisplay();
+                        customAmountInput.value = '';
+                        amountButtons.forEach(btn => btn.classList.remove('active'));
+                        renderPayPalButtons();
+                    });
+                },
+
+                // On error
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    showError('Payment failed. Please try again or contact support.');
+                },
+
+                // On cancel
+                onCancel: function(data) {
+                    showError('Payment was cancelled. Please try again.');
+                }
+            }).render('#paypal-button-container');
+
+            paypalButtonsRendered = true;
+        }
+
+        // Amount button click handlers
+        amountButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all buttons
+                amountButtons.forEach(b => b.classList.remove('active'));
+                
+                // Add active to clicked button
+                this.classList.add('active');
+                
+                // Update amount
+                selectedAmount = parseFloat(this.dataset.amount);
+                customAmountInput.value = '';
+                
+                // Update display
+                updateTotalDisplay();
+                hideError();
+                
+                // Render PayPal buttons
+                renderPayPalButtons();
+            });
+        });
+
+        // Custom amount input handler
+        customAmountInput.addEventListener('input', function() {
+            // Remove active from buttons
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Update amount
+            selectedAmount = parseFloat(this.value) || 0;
+            
+            // Update display
+            updateTotalDisplay();
+            hideError();
+            
+            // Re-render PayPal buttons if amount changed significantly
+            if (selectedAmount >= 1 && !paypalButtonsRendered) {
+                renderPayPalButtons();
+            }
+        });
+
+        // Debounce function for custom amount
+        let debounceTimer;
+        customAmountInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function() {
+                renderPayPalButtons();
+            }, 500);
+        });
+
+        // Cause change handler
+        donationCause.addEventListener('change', function() {
+            selectedCauseBadge.textContent = causeNames[this.value];
+        });
+
+        // Initialize
+        updateTotalDisplay();
+    </script>
 </body>
 
 </html>
