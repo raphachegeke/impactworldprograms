@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -30,6 +31,325 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Dynamic Styling Overrides -->
+    <style>
+        :root {
+            --transition-base: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        /* --- Navbar & Header Styling --- */
+        .top-bar {
+            background-color: transparent;
+            z-index: 1050;
+        }
+
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1040;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            padding: 1rem 2rem !important;
+            transition: var(--transition-base);
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+            padding: 0.8rem 1.2rem;
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .navbar-dark .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            transition: var(--transition-base);
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover::after,
+        .navbar-dark .navbar-nav .nav-link.active::after {
+            width: 60%;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* --- Carousel Styling --- */
+        .header-carousel .carousel-img {
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .header-carousel .carousel-img img {
+            transition: transform 8s ease-out;
+        }
+
+        .header-carousel .active .carousel-img img {
+            transform: scale(1.05);
+        }
+
+        .carousel-text h1 {
+            font-weight: 700;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            border-radius: 50px;
+            padding: 14px 32px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--transition-base);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            border: none;
+        }
+
+        .btn-square {
+            border-radius: 12px;
+            transition: var(--transition-base);
+        }
+
+        .btn-square:hover {
+            transform: rotate(360deg);
+        }
+
+        /* --- Service Cards --- */
+        .service-item {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition-base);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            /* Fallback */
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+            z-index: 2;
+        }
+
+        /* Use Bootstrap text-primary color for the bar */
+        .service-item:hover::before {
+            transform: scaleX(1);
+            background-color: currentColor;
+        }
+
+        .service-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item .btn-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: var(--transition-base);
+        }
+
+        .service-item:hover .btn-square {
+            border-radius: 50%;
+        }
+
+        /* --- Team Section --- */
+        .team-item {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition-base);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-social {
+            border-radius: 0 20px 20px 0;
+        }
+
+        /* --- About Section --- */
+        .about-img {
+            position: relative;
+        }
+
+        .about-img::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--primary);
+            border-radius: 20px;
+            z-index: -1;
+            transition: var(--transition-base);
+        }
+
+        .about-img:hover::after {
+            top: 10px;
+            left: 10px;
+        }
+
+        .about-img img {
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- Video Section ---
+        .btn-play {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: var(--transition-base);
+        }
+
+        .btn-play span {
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid var(--primary);
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        .btn-play::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            animation: pulse 2s infinite;
+        } */
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* --- Footer & Misc --- */
+        .footer {
+            background-size: cover;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            z-index: 0;
+        }
+
+        .footer>.container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .donation-item,
+        .event-item {
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            transition: var(--transition-base);
+        }
+
+        .donation-item:hover,
+        .event-item:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            .carousel-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                padding: 0.8rem 1rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .btn-play-container {
+                justify-content: center !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -44,8 +364,8 @@
     <!-- Topbar Start -->
     <div class="container-fluid top-bar wow fadeIn" data-wow-delay="0.1s">
         <div class="row align-items-center h-100">
-            <div style="display: flex; margin-top: 16px">
-                <img width="60px" src="img/logo.png" alt="Image">
+            <div class="d-flex align-items-center mt-3">
+                <img width="60px" src="img/logo.png" alt="Image" class="me-3">
                 <a href="index.html">
                     <h1 class="display-5 text-primary m-0">Impact World Programs</h1>
                 </a>
@@ -60,7 +380,7 @@
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
                 <h4 class="d-lg-none m-0">Menu</h4>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                <button type="button" class="navbar-toggler me-0 border-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -74,18 +394,8 @@
                         <a href="event.html" class="nav-item nav-link">Events</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                         <a href="waste.html" class="nav-item nav-link">Widows & Poverty</a>
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="event.html" class="dropdown-item">Event</a>
-                                <a href="feature.html" class="dropdown-item">Feature</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
                     </div>
-                    <div class="d-none d-lg-flex ms-auto">
+                    <div class="d-none d-lg-flex ms-auto align-items-center">
                         <a class="btn btn-square btn-dark ms-2" href="https://x.com/impact_world_p"><i
                                 class="fab fa-x"></i></a>
                         <a class="btn btn-square btn-dark ms-2" href="https://www.facebook.com/profile.php?id="><i
@@ -108,18 +418,18 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="carousel-text">
-                            <h1 class="display-1 text-uppercase mb-3">Together for a Better Tomorrow</h1>
-                            <p class="fs-5 mb-5">We believe in creating opportunities and empowering communities through
-                                education, healthcare, and sustainable development.</p>
-                            <div class="d-flex">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="payment.html">Donate Now</a>
-                                <a class="btn btn-secondary py-3 px-4" href="contact.html">Join Us Now</a>
+                            <h1 class="display-1 text-uppercase mb-4">Together for a Better Tomorrow</h1>
+                            <p class="fs-5 mb-5 text-muted">We believe in creating opportunities and empowering
+                                communities through education, healthcare, and sustainable development.</p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="btn btn-primary py-3 px-5" href="payment.html">Donate Now</a>
+                                <a class="btn btn-outline-secondary py-3 px-5" href="contact.html">Join Us Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                            <img class="w-100 rounded-4" src="img/carousel-1.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -129,18 +439,18 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="carousel-text">
-                            <h1 class="display-1 text-uppercase mb-3">Together, We Can Eradicate Hunger</h1>
-                            <p class="fs-5 mb-5">No one should go to bed hungry. Your support helps us bring smiles,
-                                hope, and a brighter future to those in need.</p>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="payment.html">Donate Now</a>
-                                <a class="btn btn-secondary py-3 px-4" href="contact.html">Join Us Now</a>
+                            <h1 class="display-1 text-uppercase mb-4">Together, We Can Eradicate Hunger</h1>
+                            <p class="fs-5 mb-5 text-muted">No one should go to bed hungry. Your support helps us bring
+                                smiles, hope, and a brighter future to those in need.</p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="btn btn-primary py-3 px-5" href="payment.html">Donate Now</a>
+                                <a class="btn btn-outline-secondary py-3 px-5" href="contact.html">Join Us Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                            <img class="w-100 rounded-4" src="img/carousel-2.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -150,49 +460,47 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="carousel-text">
-                            <h1 class="display-1 text-uppercase mb-3">Inspire, Educate</h1>
-                            <p class="fs-5 mb-5">
+                            <h1 class="display-1 text-uppercase mb-4">Inspire, Educate</h1>
+                            <p class="fs-5 mb-5 text-muted">
                                 The Power of Education: Empowering Teenage Girls Through Knowledge and Lifelong Learning
                                 Opportunities.
                             </p>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="payment.html">Donate Now</a>
-                                <a class="btn btn-secondary py-3 px-4" href="contact.html">Join Us Now</a>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="btn btn-primary py-3 px-5" href="payment.html">Donate Now</a>
+                                <a class="btn btn-outline-secondary py-3 px-5" href="contact.html">Join Us Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="img/carousel-4.jpg" alt="Image">
+                            <img class="w-100 rounded-4" src="img/carousel-4.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
             </div>
-
 
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="carousel-text">
-                            <h1 class="display-1 text-uppercase mb-3">Voices Heard</h1>
-                            <p class="fs-5 mb-5">
+                            <h1 class="display-1 text-uppercase mb-4">Voices Heard</h1>
+                            <p class="fs-5 mb-5 text-muted">
                                 Amplifying the perspectives and dreams of teenage Girls in a Changing World. Helping
                                 teenage girls overcome challenges and thrive in adversity.
                             </p>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="payment.html">Donate Now</a>
-                                <a class="btn btn-secondary py-3 px-4" href="contact.html">Join Us Now</a>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="btn btn-primary py-3 px-5" href="payment.html">Donate Now</a>
+                                <a class="btn btn-outline-secondary py-3 px-5" href="contact.html">Join Us Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="img/carousel-3.jpg" alt="Image">
+                            <img class="w-100 rounded-4" src="img/carousel-3.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <!-- Carousel End -->
@@ -203,9 +511,9 @@
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-11">
-                    <div class="h-100 py-5 d-flex align-items-center">
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="img/gallery/video.mp4" data-bs-target="#videoModal">
+                    <div class="h-100 py-5 d-flex align-items-center btn-play-container">
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="img/gallery/video.mp4"
+                            data-bs-target="#videoModal">
                             <span></span>
                         </button>
                         <h3 class="ms-5 mb-0">Together, we can build a world where everyone has the chance to thrive.
@@ -243,10 +551,9 @@
     </div>
     <!-- Video Modal End -->
 
-
     <!-- About Start -->
     <div class="container-fluid py-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
                     <div class="about-img">
@@ -254,25 +561,25 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <p class="section-title bg-white text-start text-primary pe-3">About Us</p>
-                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">A commitment To Impactful Services</h1>
-                    <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">Every hand extended in kindness brings us closer to
-                        a world free from suffering. Be part of a global movement dedicated to building a future where
-                        equality and compassion thrive.</p>
+                    <p class="section-title bg-white text-start text-primary pe-3 fw-bold text-uppercase">About Us</p>
+                    <h1 class="display-5 mb-4 wow fadeIn" data-wow-delay="0.2s">A commitment To Impactful Services</h1>
+                    <p class="mb-4 text-muted wow fadeIn" data-wow-delay="0.3s">Every hand extended in kindness brings
+                        us closer to a world free from suffering. Be part of a global movement dedicated to building a
+                        future where equality and compassion thrive.</p>
                     <div class="row g-4 pt-2">
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                             <div class="h-100">
-                                <h3>Our Mission</h3>
-                                <p>To empower widows, orphans and children through education and economic support, and
-                                    to protect the environment for sustainable communities.</p>
-                                <h3>Our Vision</h3>
-                                <p>A world where widows, orphans and children from marginalized communities thrive with
-                                    dignity and safety.</p>
+                                <h3 class="fw-bold text-dark">Our Mission</h3>
+                                <p class="text-muted">To empower widows, orphans and children through education and
+                                    economic support, and to protect the environment for sustainable communities.</p>
+                                <h3 class="fw-bold text-dark mt-4">Our Vision</h3>
+                                <p class="text-muted">A world where widows, orphans and children from marginalized
+                                    communities thrive with dignity and safety.</p>
                             </div>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="h-100 bg-primary p-4 text-center">
-                                <p class="fs-5 text-dark">Through your donations, we spread kindness and support to
+                            <div class="h-100 bg-primary p-4 rounded-4 text-center shadow">
+                                <p class="fs-5 text-dark mb-4">Through your donations, we spread kindness and support to
                                     children and families.</p>
                                 <a class="btn btn-secondary py-2 px-4" href="payment.html">Donate Now</a>
                             </div>
@@ -286,104 +593,95 @@
 
 
     <!-- Service Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
+    <div class="container-fluid py-5 bg-light">
+        <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-12 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="service-title">
-                        <h1 class="display-6 mb-4">Leave No Child Behind</h1>
-                        <p class="fs-5 mb-0">Impact World Programs and our partners are empowering current and future
-                            generations of the people of Kenya through advocacy, school feeding programmes, family
-                            counselling and disease prevention, and provision of better housing for underserved
-                            children.</p>
+                    <div class="service-title mb-4">
+                        <h1 class="display-5 mb-4">Leave No Child Behind</h1>
+                        <p class="fs-5 text-muted">Impact World Programs and our partners are empowering current and
+                            future generations of the people of Kenya through advocacy, school feeding programmes,
+                            family counselling and disease prevention.</p>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="row g-5">
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="row g-4">
+                        <!-- Service 1 -->
+                        <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                             <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
+                                <div class="btn-square bg-light mb-4 text-primary">
                                     <i class="fa fa-child fa-2x text-secondary"></i>
                                 </div>
-                                <h3>Vulnerable Children</h3>
-                                <p class="mb-2">Empowering vulnerable and marginalised children to eradicate maternal
-                                    deaths and Gender Based Violence</p>
-                                <a href="#!">Read More</a>
+                                <h5 class="fw-bold">Vulnerable Children</h5>
+                                <p class="text-muted small">Empowering vulnerable and marginalised children to eradicate
+                                    maternal deaths and Gender Based Violence</p>
+                                <a href="#!" class="text-primary fw-bold small"> <i
+                                        class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
+                        <!-- Service 2 -->
+                        <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                             <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
+                                <div class="btn-square bg-light mb-4 text-primary">
                                     <i class="fa fa-hospital fa-2x text-secondary"></i>
                                 </div>
-                                <h3>Health Care</h3>
-                                <p class="mb-2">We give access to healthcare to the needy children from poor
+                                <h5 class="fw-bold">Health Care</h5>
+                                <p class="text-muted small">We give access to healthcare to the needy children from poor
                                     backgrounds.</p>
-                                <a href="#!">Read More</a>
+                                <a href="#!" class="text-primary fw-bold small"> <i
+                                        class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
+                        <!-- Service 3 -->
+                        <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                             <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
+                                <div class="btn-square bg-light mb-4 text-primary">
                                     <i class="fa fa-hands-holding-child fa-2x text-secondary"></i>
                                 </div>
-                                <h3>Caregiver Counseling & Support</h3>
-                                <p class="mb-2">We provide professional counseling and emotional support to caregivers who look after children, the elderly, and individuals living with chronic illnesses. Caregiving can be physically and emotionally demanding, and many caregivers silently struggle with stress, anxiety, and burnout. Through individual sessions and group counseling, we create a safe space where caregivers can share their experiences, receive guidance, and build resilience. By strengthening caregivers, we strengthen families and the entire community.</p>
-                                <a href="#!">Read More</a>
+                                <h5 class="fw-bold">Caregiver Counseling</h5>
+                                <p class="text-muted small">We provide professional counseling and emotional support to
+                                    caregivers.</p>
+                                <a href="#!" class="text-primary fw-bold small"> <i
+                                        class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
+                        <!-- Service 4 -->
+                        <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                             <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
+                                <div class="btn-square bg-light mb-4 text-primary">
                                     <i class="fa fa-bowl-food fa-2x text-secondary"></i>
                                 </div>
-                                <h3>Gender Based Violence</h3>
-                                <p class="mb-2">We strive to eliminate Gender Based Violence that affects children in
-                                    the region.</p>
-                                <a href="#!">Read More</a>
+                                <h5 class="fw-bold">Gender Based Violence</h5>
+                                <p class="text-muted small">We strive to eliminate Gender Based Violence that affects
+                                    children in the region.</p>
+                                <a href="#!" class="text-primary fw-bold small"> <i
+                                        class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
+                        <!-- Service 5 -->
+                        <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                             <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
+                                <div class="btn-square bg-light mb-4 text-primary">
                                     <i class="fa fa-school-flag fa-2x text-secondary"></i>
                                 </div>
-                                <h3>Improve Access To Education</h3>
-                                <p class="mb-2">Access to education from primary level to technical education level
-                                    through sponsorship, provision of education materials and infrastructure
+                                <h5 class="fw-bold">Access To Education</h5>
+                                <p class="text-muted small">Access to education through sponsorship and infrastructure
                                     improvement.</p>
-                                <a href="#!">Read More</a>
+                                <a href="#!" class="text-primary fw-bold small"> <i
+                                        class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
+                        <!-- Service 6 -->
+                        <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                             <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
+                                <div class="btn-square bg-light mb-4 text-primary">
                                     <i class="fa fa-home fa-2x text-secondary"></i>
                                 </div>
-                                <h3>Housing</h3>
-                                <p class="mb-2">Assist vulnerable households to acquire decent housing especially during
-                                    rainy seasons.</p>
-                                <a href="#!">Read More</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
-                                    <i class="fa fa-school-flag fa-2x text-secondary"></i>
-                                </div>
-                                <h3>Disease Sensitization & Community Awareness</h3>
-                                <p class="mb-2">We conduct community sensitization programs to educate the public about various diseases, focusing on prevention, early detection, and proper treatment. Our awareness initiatives address both communicable and non-communicable diseases such as HIV/AIDS, cancer, diabetes, malaria, and mental health conditions. Through workshops, school outreach programs, and community forums, we provide accurate information that reduces stigma, encourages healthy practices, and empowers individuals to make informed health decisions..</p>
-                                <a href="#!">Read More</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="service-item h-100">
-                                <div class="btn-square bg-light mb-4">
-                                    <i class="fa fa-home fa-2x text-secondary"></i>
-                                </div>
-                                <h3>Mental Health & Psychosocial Support</h3>
-                                <p class="mb-2">We promote mental health and emotional well-being by offering psychosocial support to individuals and families facing illness or life challenges. Many people suffer in silence due to stigma or lack of access to proper care. Our programs create supportive environments where individuals can openly discuss their struggles, receive professional guidance, and rebuild confidence. We are committed to fostering hope, resilience, and stronger, healthier communities.</p>
-                                <a href="#!">Read More</a>
+                                <h5 class="fw-bold">Housing Support</h5>
+                                <p class="text-muted small">Assist vulnerable households to acquire decent housing
+                                    especially during rainy seasons.</p>
+                                <a href="#!" class="text-primary fw-bold small"> <i
+                                        class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -396,189 +694,62 @@
 
     <!-- Features Start -->
     <div class="container-fluid py-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="row g-5 align-items-center">
-                <!-- <div class="col-lg-6">
-                    <div class="rounded overflow-hidden">
-                        <div class="row g-0">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="text-center bg-primary py-5 px-4 h-100">
-                                    <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                                    <h1 class="display-5 mb-0" data-toggle="counter-up">500</h1>
-                                    <span class="text-dark">Team Members</span>
-                                </div>
+                <div class="col-lg-6">
+                    <p class="section-title bg-white text-start text-primary pe-3 fw-bold text-uppercase">Mental
+                        Awareness</p>
+                    <h1 class="display-5 mb-4 wow fadeIn" data-wow-delay="0.2s">Promoting Youth Mental Awareness</h1>
+                    <p class="mb-4 text-muted wow fadeIn" data-wow-delay="0.3s">We support youth mental health through
+                        counseling, peer programs, and safe spaces for open dialogue. Our goal is to build stronger,
+                        more connected communities.</p>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3">Various Services Offered:</h5>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <p class="text-dark mb-2"><i class="fa fa-check text-primary me-2"></i>Organizational
+                                    development</p>
+                                <p class="text-dark mb-2"><i class="fa fa-check text-primary me-2"></i>Monitoring &
+                                    Evaluation</p>
+                                <p class="text-dark mb-2"><i class="fa fa-check text-primary me-2"></i>Environmental
+                                    sustainability</p>
                             </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="text-center bg-secondary py-5 px-4 h-100">
-                                    <i class="fa fa-award fa-3x text-primary mb-3"></i>
-                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">70</h1>
-                                    <span class="text-white">Award Winning</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="text-center bg-secondary py-5 px-4 h-100">
-                                    <i class="fa fa-list-check fa-3x text-primary mb-3"></i>
-                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">3000</h1>
-                                    <span class="text-white">Total Projects</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                                <div class="text-center bg-primary py-5 px-4 h-100">
-                                    <i class="fa fa-comments fa-3x text-secondary mb-3"></i>
-                                    <h1 class="display-5 mb-0" data-toggle="counter-up">7000</h1>
-                                    <span class="text-dark">Client's Review</span>
-                                </div>
+                            <div class="col-sm-6">
+                                <p class="text-dark mb-2"><i class="fa fa-check text-primary me-2"></i>Human rights
+                                    advocacy</p>
+                                <p class="text-dark mb-2"><i class="fa fa-check text-primary me-2"></i>Livelihood
+                                    Support</p>
+                                <p class="text-dark mb-2"><i class="fa fa-check text-primary me-2"></i>Education &
+                                    Training</p>
                             </div>
                         </div>
                     </div>
-                </div> -->
-                <div class="col-lg-6">
-                    <p class="section-title bg-white text-start text-primary pe-3">Metal Awareness</p>
-                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">Promoting Youth Mental Awareness</h1>
-                    <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">We support youth mental health through counseling,
-                        peer programs, and safe spaces for open dialogue. Our goal is to build stronger, more connected
-                        communities. <br /><br /> We also connect individuals facing addiction with trusted counseling
-                        and medical support, ensuring access to the care they need. <br /><br /> We help those
-                        struggling with addiction access counseling and medical support within their communities. Our
-                        holistic approach to youth wellness is rooted in the belief that a healthy mind leads to a
-                        brighter future. We’re committed to empowering young people to live fulfilling, meaningful
-                        lives.</p>
-                    <p class="section-title bg-white text-start text-primary pe-3">Various Services</p>
-                    <p>With several services offered, they can be categorised as under:
-                        <p />
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.4s"><i
-                            class="fa fa-check text-primary me-2"></i>Organizational development</p>
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.5s"><i
-                            class="fa fa-check text-primary me-2"></i>Monitoring, Evaluation and sustainability</p>
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.6s"><i
-                            class="fa fa-check text-primary me-2"></i>Environmental sustainability</p>
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.4s"><i
-                            class="fa fa-check text-primary me-2"></i>Human rights advocacy</p>
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.5s"><i
-                            class="fa fa-check text-primary me-2"></i>Livelihood</p>
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.6s"><i
-                            class="fa fa-check text-primary me-2"></i>Health</p>
-                    <p class="text-dark wow fadeIn" data-wow-delay="0.6s"><i
-                            class="fa fa-check text-primary me-2"></i>Education ad Training</p>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="about-img">
+                        <img class="img-fluid w-100" src="img/gallery/gallery7.jpg" alt="Mental Health Awareness">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Features End -->
 
-
-    <!-- Donation Start 
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Donation</p>
-                <h1 class="display-6 mb-4">Our Donation Causes Around the World</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="85"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">85%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Food</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Healthy Food</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Water Treatment</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="75"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">75%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-3.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Education</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Education Support</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Donation End -->
-
-
     <!-- Banner Start -->
     <div class="container-fluid banner py-5">
         <div class="container">
-            <div class="banner-inner bg-light p-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="banner-inner bg-light p-5 wow fadeIn rounded-4 shadow" data-wow-delay="0.1s">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 py-5 text-center">
-                        <h1 class="display-6 wow fadeIn" data-wow-delay="0.3s">Our Door Are Always Open to More People
-                            Who Want to Support Each Other!</h1>
-                        <p class="fs-5 mb-4 wow fadeIn" data-wow-delay="0.5s">Through your donations and volunteer work,
-                            we spread kindness and support to children, families, and communities struggling to find
-                            stability.</p>
-                        <div class="d-flex justify-content-center wow fadeIn" data-wow-delay="0.7s">
-                            <a class="btn btn-primary py-3 px-4 me-3" href="payment.html">Donate Now</a>
-                            <a class="btn btn-secondary py-3 px-4" href="contact.html">Join Us Now</a>
+                        <h1 class="display-5 mb-4 wow fadeIn" data-wow-delay="0.3s">Our Doors Are Always Open to More
+                            People Who Want to Support Each Other!</h1>
+                        <p class="fs-5 mb-4 text-muted wow fadeIn" data-wow-delay="0.5s">Through your donations and
+                            volunteer work, we spread kindness and support to children, families, and communities
+                            struggling to find stability.</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-3 wow fadeIn" data-wow-delay="0.7s">
+                            <a class="btn btn-primary py-3 px-5" href="payment.html">Donate Now</a>
+                            <a class="btn btn-secondary py-3 px-5" href="contact.html">Join Us Now</a>
                         </div>
                     </div>
                 </div>
@@ -590,36 +761,41 @@
 
     <!-- Event Start -->
     <div class="container-fluid py-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Recent Activities</p>
-                <h1 class="display-6 mb-4">Be a Part of a Global Movement</h1>
+                <p class="section-title bg-white text-center text-primary px-3 fw-bold text-uppercase">Recent Activities
+                </p>
+                <h1 class="display-5 mb-5">Be a Part of a Global Movement</h1>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="event-item h-100 p-4">
-                        <img class="img-fluid w-100 mb-4" src="img/gallery/gallery11.jpg" alt="">
-                        <a href="#!" class="h3 d-inline-block">Widow Empowerment</a>
-                        <p>We provided vital GBV education for women in Bungoma County, equipping them with knowledge
-                            and resources to recognize, prevent, and overcome gender-based violence. Empowering women to
-                            safeguard their rights and well-being.</p>
-                        <div class="bg-light p-4">
-                            <p style="color: black">Our women’s empowerment group united women in a journey of growth,
-                                solidarity, and achievement. Through workshops, networking, and community involvement,
-                                we fostered empowerment, inspiring lasting change and connection.</p>
+                <div class="col-md-6 col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="event-item h-100 p-4 shadow-sm border-0">
+                        <div class="overflow-hidden rounded-3 mb-4">
+                            <img class="img-fluid w-100" src="img/gallery/gallery11.jpg" alt="Widow Empowerment"
+                                style="object-fit: cover; height: 250px;">
+                        </div>
+                        <h4 class="fw-bold mb-3">Widow Empowerment</h4>
+                        <p class="text-muted">We provided vital GBV education for women in Bungoma County, equipping
+                            them with knowledge and resources to recognize, prevent, and overcome gender-based violence.
+                        </p>
+                        <div class="bg-light p-3 rounded-3 mt-3">
+                            <small class="text-dark">Our women's empowerment group united women in a journey of growth,
+                                solidarity, and achievement.</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="event-item h-100 p-4">
-                        <img class="img-fluid w-100 mb-4" src="img/event-2.jpg" alt="">
-                        <a href="#!" class="h3 d-inline-block">Education Program</a>
-                        <p>We championed girls’ education, offering vital lessons on hygiene, sanitation, and the
-                            dangers of early pregnancy. Empowering young women with knowledge and tools for a healthier,
-                            brighter future.</p>
-                        <div class="bg-light p-4">
-                            <p style="color: black">We distributed sanitary towels to teenagers, ensuring access to
-                                essential menstrual hygiene products for their health and dignity.</p>
+                <div class="col-md-6 col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="event-item h-100 p-4 shadow-sm border-0">
+                        <div class="overflow-hidden rounded-3 mb-4">
+                            <img class="img-fluid w-100" src="img/event-2.jpg" alt="Education Program"
+                                style="object-fit: cover; height: 250px;">
+                        </div>
+                        <h4 class="fw-bold mb-3">Education Program</h4>
+                        <p class="text-muted">We championed girls' education, offering vital lessons on hygiene,
+                            sanitation, and the dangers of early pregnancy.</p>
+                        <div class="bg-light p-3 rounded-3 mt-3">
+                            <small class="text-dark">We distributed sanitary towels to teenagers, ensuring access to
+                                essential menstrual hygiene products.</small>
                         </div>
                     </div>
                 </div>
@@ -630,22 +806,25 @@
 
 
     <!-- Donate Start -->
-    <div class="container-fluid donate py-5">
+    <div class="container-fluid donate py-5 bg-primary">
         <div class="container">
-            <div class="row g-0">
+            <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
                 <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
-                        <h1 class="display-6 mb-4">Let's Donate to Needy People for Better Lives</h1>
-                        <p class="fs-5 mb-0">Through your donations, we spread kindness and support to children,
-                            families, and communities struggling to find stability.</p>
+                        <h1 class="display-5 mb-4">Let's Donate to Needy People for Better Lives</h1>
+                        <p class="fs-5 text-muted mb-0">Through your donations, we spread kindness and support to
+                            children, families, and communities struggling to find stability.</p>
                     </div>
                 </div>
-                <div class="col-lg-5 donate-form bg-primary py-5 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <div class="h-100 p-5">
+                <div class="col-lg-5 donate-form bg-secondary py-5 text-center wow fadeIn d-flex align-items-center"
+                    data-wow-delay="0.5s">
+                    <div class="h-100 p-5 w-100">
+                        <h3 class="text-white mb-4">Make a Difference Today</h3>
                         <form>
                             <div class="row g-3">
                                 <div class="col-12">
-                                    <button class="btn btn-secondary py-3 w-100" type="submit">Donate Now</button>
+                                    <button class="btn btn-dark py-3 w-100 rounded-pill" type="submit">Donate
+                                        Now</button>
                                 </div>
                             </div>
                         </form>
@@ -659,51 +838,63 @@
 
     <!-- Team Start -->
     <div class="container-fluid py-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Our Team</p>
-                <h1 class="display-6 mb-4">Meet Our Dedicated Team Members</h1>
+                <p class="section-title bg-white text-center text-primary px-3 fw-bold text-uppercase">Our Team</p>
+                <h1 class="display-5 mb-5">Meet Our Dedicated Team Members</h1>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="team-item d-flex h-100 p-4">
                         <div class="team-detail pe-4">
-                            <h3>LUCY ATIELI</h3>
-                            <span>PROGRAM DIRECTOR</span>
+                            <h3 class="fw-bold">LUCY ATIELI</h3>
+                            <span class="text-primary">PROGRAM DIRECTOR</span>
+                            <p class="mt-2 text-muted small">Leading the vision and impact strategy.</p>
                         </div>
-                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-youtube"></i></a>
+                        <div
+                            class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-3 rounded-3">
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                     <div class="team-item d-flex h-100 p-4">
                         <div class="team-detail pe-4">
-                            <h3>ASHITIBA KUYA</h3>
-                            <span>OPERATIONS MANAGER</span>
+                            <h3 class="fw-bold">ASHITIBA KUYA</h3>
+                            <span class="text-primary">OPERATIONS MANAGER</span>
+                            <p class="mt-2 text-muted small">Ensuring smooth execution of programs.</p>
                         </div>
-                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-youtube"></i></a>
+                        <div
+                            class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-3 rounded-3">
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="team-item d-flex h-100 p-4">
                         <div class="team-detail pe-4">
-                            <h3>DORIS OWENDI</h3>
-                            <span>FINANCE & ADMINISTRATIVE OFFICER</span>
+                            <h3 class="fw-bold">DORIS OWENDI</h3>
+                            <span class="text-primary">FINANCE & ADMIN</span>
+                            <p class="mt-2 text-muted small">Managing resources with integrity.</p>
                         </div>
-                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-youtube"></i></a>
+                        <div
+                            class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-3 rounded-3">
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary btn-sm my-1" href="#!"><i
+                                    class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -714,110 +905,69 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
+    <div class="container-fluid py-5 bg-light">
+        <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-12 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
                     <div class="testimonial-title">
-                        <h1 class="display-6 mb-4">What People Say About Our Activities.</h1>
-                        <p class="fs-5 mb-0">We work to bring smiles, hope, and a brighter future to those in need.</p>
+                        <h1 class="display-5 mb-4">What People Say</h1>
+                        <p class="fs-5 text-muted">We work to bring smiles, hope, and a brighter future to those in
+                            need.</p>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.3s">
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">Education is the foundation of change. By funding schools,
-                                            scholarships, and training programs, we can help children and adults unlock
-                                            their potential for a better future.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Lucy Atieli</h5>
-                                                <span>Program Director</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="testimonial-item bg-white p-4 rounded-4 shadow-sm">
+                            <div class="mb-3">
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 text-muted mb-4">"Education is the foundation of change. By funding schools,
+                                scholarships, and training programs, we can help children and adults unlock their
+                                potential for a better future."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ps-3">
+                                    <h5 class="mb-0 fw-bold">Lucy Atieli</h5>
+                                    <span class="text-primary small">Program Director</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">Every hand extended in kindness brings us closer to a world free
-                                            from suffering. Be part of a global movement dedicated to building a future
-                                            where equality and compassion thrive.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Ashitiba Kuya</h5>
-                                                <span>Operations Manager</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="testimonial-item bg-white p-4 rounded-4 shadow-sm">
+                            <div class="mb-3">
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 text-muted mb-4">"Every hand extended in kindness brings us closer to a world
+                                free from suffering. Be part of a global movement dedicated to building a future where
+                                equality and compassion thrive."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ps-3">
+                                    <h5 class="mb-0 fw-bold">Ashitiba Kuya</h5>
+                                    <span class="text-primary small">Operations Manager</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">Love and compassion have the power to heal. Through your
-                                            donations and volunteer work, we can spread kindness and support to
-                                            children, families, and communities struggling to find stability.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Doris Owendi</h5>
-                                                <span>Finance Officer</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="testimonial-item bg-white p-4 rounded-4 shadow-sm">
+                            <div class="mb-3">
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                                <i class="fa fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 text-muted mb-4">"Love and compassion have the power to heal. Through your
+                                donations and volunteer work, we can spread kindness and support to children, families,
+                                and communities."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ps-3">
+                                    <h5 class="mb-0 fw-bold">Doris Owendi</h5>
+                                    <span class="text-primary small">Finance Officer</span>
                                 </div>
                             </div>
                         </div>
@@ -834,13 +984,14 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
-                    <div class="position-relative w-100 mb-2">
-                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
-                            style="height: 60px;">
+                    <h1 class="display-6 text-white mb-4">Subscribe the Newsletter</h1>
+                    <p class="text-white mb-4">Stay updated with our latest activities and impact stories.</p>
+                    <div class="position-relative w-100" style="max-width: 500px; margin: auto;">
+                        <input class="form-control border-0 w-100 ps-4 pe-5 rounded-pill" type="text"
+                            placeholder="Enter Your Email" style="height: 60px;">
                         <button type="button"
-                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            class="btn btn-secondary py-2 px-4 position-absolute top-0 end-0 mt-2 me-2 rounded-pill"><i
+                                class="fa fa-paper-plane me-2"></i>Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -850,73 +1001,69 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row g-5 py-5">
+    <div class="container-fluid footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #181d38;">
+        <div class="container py-5">
+            <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">IMPACT WORLD PROGRAMS</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kisumu, Kenya</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254711517947</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>admin@impactworldprograms.org</p>
-                    <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-primary me-2" href="https://x.com/impact_world_p"><i
+                    <h4 class="text-light mb-4 fw-bold">IMPACT WORLD PROGRAMS</h4>
+                    <p class="text-white-50 mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kisumu, Kenya</p>
+                    <p class="text-white-50 mb-2"><i class="fa fa-phone-alt me-3"></i>+254711517947</p>
+                    <p class="text-white-50 mb-2"><i class="fa fa-envelope me-3"></i>admin@impactworldprograms.org</p>
+                    <div class="d-flex pt-3 gap-2">
+                        <a class="btn btn-square btn-outline-light rounded-2" href="https://x.com/impact_world_p"><i
                                 class="fab fa-x-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2"
+                        <a class="btn btn-square btn-outline-light rounded-2"
                             href="https://www.facebook.com/profile.php?id=61567162015132"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.youtube.com/@impactworldprograms"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-primary me-2"
-                            href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-2"
+                            href="https://www.youtube.com/@impactworldprograms"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-2"
+                            href="https://www.instagram.com/impact_world_programs/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Our Services</a>
-                    <a class="btn btn-link" href="donation.html">Support</a>
+                    <h4 class="text-light mb-4 fw-bold">Quick Links</h4>
+                    <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                    <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="service.html">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="donation.html">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Business Hours</h4>
-                    <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">09:00 am - 05:00 pm</h6>
+                    <h4 class="text-light mb-4 fw-bold">Business Hours</h4>
+                    <p class="text-white-50 mb-1">Monday - Friday</p>
+                    <h6 class="text-light mb-4">09:00 am - 05:00 pm</h6>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Gallery</h4>
+                    <h4 class="text-light mb-4 fw-bold">Gallery</h4>
                     <div class="row g-2">
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
+                            <img class="img-fluid rounded-2" src="img/gallery-1.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="">
+                            <img class="img-fluid rounded-2" src="img/gallery-2.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="">
+                            <img class="img-fluid rounded-2" src="img/gallery-3.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="">
+                            <img class="img-fluid rounded-2" src="img/gallery-4.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-5.jpg" alt="">
+                            <img class="img-fluid rounded-2" src="img/gallery-5.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="">
+                            <img class="img-fluid rounded-2" src="img/gallery-6.jpg" alt="">
                         </div>
-                        <a href="gallery.html">Click here to See all Photos</a>
                     </div>
+                    <a href="gallery.html" class="text-white-50 small mt-2 d-inline-block">Click here to See all
+                        Photos</a>
                 </div>
             </div>
-            <div class="copyright pt-5">
+            <div class="copyright pt-4 mt-4 border-top border-secondary">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="fw-semi-bold" href="#!">Impact World Programs</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        
+                        <span class="text-white-50">&copy; <a class="fw-semi-bold text-white" href="#!">Impact World
+                                Programs</a>, All Right Reserved.</span>
                     </div>
                 </div>
             </div>
@@ -926,7 +1073,8 @@
 
 
     <!-- Back to Top -->
-    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top rounded-pill shadow-lg"><i
+            class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -940,7 +1088,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-<script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 </body>
 
 </html>
