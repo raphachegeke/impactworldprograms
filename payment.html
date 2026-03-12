@@ -110,7 +110,7 @@
             background: linear-gradient(135deg, var(--primary) 0%, #1a7a8a 100%);
             border-radius: 16px;
             padding: 24px;
-            color: white;
+            color: #1a7a8a;
         }
 
         .cause-badge {
@@ -129,7 +129,7 @@
             width: 40px;
             height: 40px;
             background: var(--primary);
-            color: white;
+            color: #1a7a8a;
             border-radius: 50%;
             font-weight: 700;
             margin-right: 12px;
@@ -265,11 +265,11 @@
                         <!-- Step 1: Select Amount -->
                         <div class="step-title">
                             <div class="step-indicator">1</div>
-                            <h4 class="mb-0">Select Donation Amount</h4>
+                            <h4 class="mb-0">Enter Donation Amount</h4>
                         </div>
 
                         <!-- Preset Amounts -->
-                        <div class="row g-3 mb-4">
+                        <!-- <div class="row g-3 mb-4">
                             <div class="col-6 col-md-4">
                                 <button type="button" class="amount-btn w-100" data-amount="25">$25</button>
                             </div>
@@ -288,11 +288,11 @@
                             <div class="col-6 col-md-4">
                                 <button type="button" class="amount-btn w-100" data-amount="1000">$1,000</button>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Custom Amount -->
                         <div class="mb-4">
-                            <label class="form-label fw-semibold mb-2">Or enter a custom amount</label>
+                            <!-- <label class="form-label fw-semibold mb-2">Or enter a custom amount</label> -->
                             <div class="input-group">
                                 <span class="input-group-text bg-primary text-white border-0" style="border-radius: 12px 0 0 12px; padding: 14px 20px;">
                                     <strong>$</strong>
@@ -327,7 +327,7 @@
                         <div class="row g-3 mb-4">
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold mb-2">Full Name</label>
-                                <input type="text" class="form-control donor-input" id="donorName" placeholder="John Doe">
+                                <input type="text" class="form-control donor-input" id="donorName" placeholder="">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold mb-2">Email Address</label>
@@ -354,7 +354,7 @@
                         <div class="total-display mb-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <p class="mb-1 opacity-75">Donation Amount</p>
+                                    <p class="mb-1 opacity-75">Total Donation Amount</p>
                                     <h2 class="mb-0" id="totalAmount">$0.00</h2>
                                 </div>
                                 <div class="text-end">

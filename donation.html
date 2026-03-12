@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Impact World Programs</title>
+    <title>DONATION: Impact World Programs</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,6 +30,23 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Minor helper adjustments to ensure responsiveness works with the existing palette */
+        .donation-card-img {
+            height: 220px;
+            object-fit: cover;
+        }
+        .progress-horizontal {
+            height: 10px;
+        }
+        /* Fix for the play button alignment on mobile */
+        @media (max-width: 768px) {
+            .btn-play-container {
+                justify-content: center !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -43,12 +60,15 @@
 
     <!-- Topbar Start -->
     <div class="container-fluid top-bar wow fadeIn" data-wow-delay="0.1s">
-        <div class="row align-items-center h-100">
-            <div style="display: flex; margin-top: 16px">
-                <img width="60px" src="img/logo.png" alt="Image">
-                <a href="index.html">
-                    <h1 class="display-5 text-primary m-0">Impact World Programs</h1>
-                </a>
+        <div class="container">
+            <div class="row align-items-center h-100">
+                <!-- Removed inline style, used Bootstrap d-flex -->
+                <div class="col-12 d-flex align-items-center py-3">
+                    <img width="60px" src="img/logo.png" alt="Image" class="me-3">
+                    <a href="index.html" class="text-decoration-none">
+                        <h1 class="display-6 text-primary m-0">Impact World Programs</h1>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -66,33 +86,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav me-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="donation.html" class="nav-item nav-link">Donation</a>
+                        <a href="donation.html" class="nav-item nav-link active">Donation</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <a href="event.html" class="nav-item nav-link">Events</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                         <a href="waste.html" class="nav-item nav-link">Widows & Poverty</a>
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="event.html" class="dropdown-item">Event</a>
-                                <a href="feature.html" class="dropdown-item">Feature</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="d-none d-lg-flex ms-auto">
-                        <a class="btn btn-square btn-dark ms-2" href="https://x.com/impact_world_p"><i
-                                class="fab fa-x"></i></a>
-                        <a class="btn btn-square btn-dark ms-2" href="https://www.facebook.com/profile.php?id="><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-dark ms-2"
-                            href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i
-                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="https://x.com/impact_world_p"><i class="fab fa-x"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="https://www.facebook.com/profile.php?id="><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </nav>
@@ -120,13 +126,12 @@
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-11">
-                    <div class="h-100 py-5 d-flex align-items-center">
+                    <div class="h-100 py-5 d-flex align-items-center btn-play-container">
                         <button type="button" class="btn-play" data-bs-toggle="modal"
                             data-src="img/gallery/video.mp4" data-bs-target="#videoModal">
                             <span></span>
                         </button>
-                        <h3 class="ms-5 mb-0">Together, we can build a world where everyone has the chance to thrive.
-                        </h3>
+                        <h3 class="ms-4 mb-0 text-white">Together, we can build a world where everyone has the chance to thrive.</h3>
                     </div>
                 </div>
                 <div class="d-none d-lg-block col-lg-1">
@@ -142,10 +147,10 @@
 
     <!-- Video Modal Start -->
     <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content rounded-0">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Impact World Video</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -161,154 +166,162 @@
     <!-- Video Modal End -->
     
     
-<!-- Donate Start -->
-<div class="container-fluid donate py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
+    <!-- Donate Info Start -->
+    <div class="container-fluid donate py-5 bg-light">
+        <div class="container">
+            <div class="row g-5 align-items-stretch">
 
-            <!-- Left Side -->
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
-                <div class="p-4 shadow rounded bg-light h-100">
-                    <h3 class="mb-4">Your Impact</h3>
-
-                    <p><i class="fa fa-check text-primary me-2"></i>$25: Enough to support one child for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$50: Can support two children for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$100: Can support four children for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$1000: Can support 40 children for a month.</p>
-                    <p><i class="fa fa-check text-primary me-2"></i>$5000: Can support 200 children for a month.</p>
-                    <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>$10000: Can support 400 children for a month.</p>
+                <!-- Left Side: Impact List -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="p-5 shadow rounded bg-white h-100 border-start border-5 border-primary">
+                        <h3 class="mb-4 text-primary">Your Impact</h3>
+                        <p class="mb-4">Every dollar makes a difference. Here is how far your contribution goes:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div><i class="fa fa-heart text-primary me-2"></i><strong>$25</strong></div>
+                                <div>Supports 1 child for a month</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div><i class="fa fa-heart text-primary me-2"></i><strong>$50</strong></div>
+                                <div>Supports 2 children for a month</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div><i class="fa fa-heart text-primary me-2"></i><strong>$100</strong></div>
+                                <div>Supports 4 children for a month</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div><i class="fa fa-heart text-primary me-2"></i><strong>$1,000</strong></div>
+                                <div>Supports 40 children for a month</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div><i class="fa fa-heart text-primary me-2"></i><strong>$5,000</strong></div>
+                                <div>Supports 200 children for a month</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3 border-bottom-0">
+                                <div><i class="fa fa-heart text-primary me-2"></i><strong>$10,000</strong></div>
+                                <div>Supports 400 children for a month</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Right Side -->
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
-                <div class="p-4 shadow rounded bg-white h-100">
-                    <h3 class="mb-4">Pay Using the Details Below</h3>
-                    <h3 class="mb-4">Diamond Trust Bank (DTB)</h3>
-
-                    <h5>Paybill:</h5>
-                    <p class="fw-bold">4141713</p>
-
-                    <h5>Account No:</h5>
-                    <p class="mb-1">0933288002 — Dollar Account</p>
-                    <p class="mb-0">0933288001 — Shilling Account</p>
+                <!-- Right Side: Bank Details -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="p-5 shadow rounded bg-white h-100 border-start border-5 border-secondary">
+                        <h3 class="mb-4 text-primary">Pay Using the Details Below</h3>
+                        <div class="bg-light p-4 rounded mb-4">
+                            <h4 class="text-dark mb-3">Diamond Trust Bank (DTB)</h4>
+                            <div class="mb-3">
+                                <h5 class="text-secondary mb-1">Paybill:</h5>
+                                <p class="fs-4 fw-bold text-dark mb-0">4141713</p>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mb-2">Account Numbers:</h5>
+                        <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded mb-2">
+                            <span class="fw-bold">Dollar Account</span>
+                            <span class="text-dark">0933288002</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded">
+                            <span class="fw-bold">Shilling Account</span>
+                            <span class="text-dark">0933288001</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
     
-    
-    
-
-
-    <!--  <a style="color: white" class="btn btn-primary py-3 px-4 me-3" href="">READY TO DONATE WITH MOBILE MONEY</a> -->
-    <!-- Donation Start -->
+    <!-- Introduction Section -->
     <div class="container-fluid py-5">
         <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
                 <p class="section-title bg-white text-center text-primary px-3">Donation</p>
                 <h1 class="display-6 mb-4">Support Our Mission</h1>
-                <p>Thank you for considering a donation to Impact World Programs. Your support plays a crucial role in
-                    advancing our mission and making a positive impact on the communities we serve. By contributing to
-                    our cause, you become an integral part of a movement dedicated to enhance our services.
-                    <p />
+                <p class="lead">Thank you for considering a donation to Impact World Programs. Your support plays a crucial role in advancing our mission and making a positive impact on the communities we serve. By contributing to our cause, you become an integral part of a movement dedicated to enhancing lives.</p>
             </div>
-            <div class="row g-4">
-
+            <div class="row g-4 mt-4">
 
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Empowering
-                                    Change</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Empowering Change</a>
-                            <p>Your donation directly empowers us to drive meaningful change in Kisumu, Kakamega and
-                                Busia counties. Whether it’s education, housing, food, or counselling, your support
-                                enables us to create lasting, positive transformations.
-                            </p>
+                    <div class="donation-item d-flex flex-column h-100 p-4 bg-light shadow rounded">
+                        <div class="position-relative mb-4">
+                            <img class="img-fluid w-100 rounded" src="img/donation-1.jpg" alt="Empowering Change">
+                            <span class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0 m-2">Empowering Change</span>
                         </div>
+                        <h4 class="mb-3">Empowering Change</h4>
+                        <p class="flex-grow-1">Your donation directly empowers us to drive meaningful change in Kisumu, Kakamega and Busia counties. Whether it’s education, housing, food, or counselling, your support enables us to create lasting, positive transformations.</p>
                     </div>
                 </div>
 
-
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Community
-                                    Impact</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Community Impact</a>
-                            <p>Impact World Programs is committed to making a difference at the grassroots level. Your
-                                donation helps us implement sustainable solutions, provide essential services, and
-                                uplift underprivileged individuals and families in need.
-                            </p>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="donation-item d-flex flex-column h-100 p-4 bg-light shadow rounded">
+                        <div class="position-relative mb-4">
+                            <img class="img-fluid w-100 rounded" src="img/donation-2.jpg" alt="Community Impact">
+                            <span class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0 m-2">Community Impact</span>
                         </div>
+                        <h4 class="mb-3">Community Impact</h4>
+                        <p class="flex-grow-1">Impact World Programs is committed to making a difference at the grassroots level. Your donation helps us implement sustainable solutions, provide essential services, and uplift underprivileged individuals and families in need.</p>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/gallery/gallery23.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Transparency and
-                                    Accountability</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Transparency and Accountability</a>
-                            <p>We take pride in our commitment to transparency and accountability. Rest assured that
-                                your contribution will be utilized efficiently and effectively, directly benefiting
-                                those who need it most. Our financial records are open for scrutiny, and we provide
-                                regular updates on the impact of your generosity.
-                            </p>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="donation-item d-flex flex-column h-100 p-4 bg-light shadow rounded">
+                        <div class="position-relative mb-4">
+                            <img class="img-fluid w-100 rounded" src="img/gallery/gallery23.jpg" alt="Transparency">
+                            <span class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0 m-2">Accountability</span>
                         </div>
+                        <h4 class="mb-3">Transparency & Accountability</h4>
+                        <p class="flex-grow-1">We take pride in our commitment to transparency. Rest assured that your contribution will be utilized efficiently, directly benefiting those who need it most. Our financial records are open for scrutiny.</p>
                     </div>
                 </div>
-
 
             </div>
         </div>
     </div>
-    <!-- Donation End -->
 
-
-    <!-- Donate Start -->
+    <!-- Ways to Donate Start -->
     <div class="container-fluid donate py-5">
         <div class="container">
-            <div class="row g-0">
+            <div class="row g-0 rounded overflow-hidden shadow">
                 <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex flex-column justify-content-center h-100 p-5">
                         <h1 class="display-6 mb-4">Let's Donate to Needy People for Better Lives</h1>
-                        <p class="fs-5 mb-0">Through your donations, we spread kindness and support to children,
-                            families, and communities struggling to find stability.</p>
+                        <p class="fs-5 mb-0">Through your donations, we spread kindness and support to children, families, and communities struggling to find stability.</p>
                     </div>
                 </div>
-                <div class="col-lg-5 donate-form bg-primary py-5 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Ways to Donate</h1>
-                    <ol style="color: white">
-                        <li><strong style="color: black">One-Time Donation: </strong>Make a one-time contribution to
-                            support our immediate initiatives and projects.</li><br />
-                        <li><strong style="color: black">Monthly Giving: </strong>Join our monthly giving program to
-                            provide steady, ongoing support. Monthly donations create a stable foundation for long-term
-                            projects and sustained impact.</li><br />
-
-                        <li><strong style="color: black">Corporate Sponsorship: </strong>Partner with us through
-                            corporate sponsorship to align your brand with our mission and demonstrate your commitment
-                            to corporate social responsibility.</li><br />
-
-                        <li><strong style="color: black">In-Kind Donations: </strong>Non-monetary contributions, such as
-                            goods or services, are invaluable and can make a significant difference. Contact us to
-                            discuss potential in-kind contributions.</li><br />
-                    </ol>
+                <div class="col-lg-5 donate-form bg-primary py-5 px-4 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h3 class="display-6 mb-4 text-white">Ways to Donate</h3>
+                    <div class="text-start text-white">
+                        <div class="d-flex mb-3">
+                            <div class="flex-shrink-0"><i class="fa fa-hand-holding-heart fa-2x text-dark"></i></div>
+                            <div class="ms-3">
+                                <h5 class="text-dark">One-Time Donation</h5>
+                                <p class="text-white-50">Make a one-time contribution to support our immediate initiatives and projects.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="flex-shrink-0"><i class="fa fa-calendar-check fa-2x text-dark"></i></div>
+                            <div class="ms-3">
+                                <h5 class="text-dark">Monthly Giving</h5>
+                                <p class="text-white-50">Join our monthly giving program to provide steady, ongoing support for sustained impact.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="flex-shrink-0"><i class="fa fa-building fa-2x text-dark"></i></div>
+                            <div class="ms-3">
+                                <h5 class="text-dark">Corporate Sponsorship</h5>
+                                <p class="text-white-50">Partner with us to align your brand with our mission and demonstrate corporate social responsibility.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="flex-shrink-0"><i class="fa fa-box-open fa-2x text-dark"></i></div>
+                            <div class="ms-3">
+                                <h5 class="text-dark">In-Kind Donations</h5>
+                                <p class="text-white-50">Non-monetary contributions such as goods or services are invaluable. Contact us to discuss.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -316,217 +329,194 @@
     <!-- Donate End -->
 
 
-
-    <!-- Donation Start -->
+    <!-- Donation Causes Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Donation</p>
+                <p class="section-title bg-white text-center text-primary px-3">Causes</p>
                 <h1 class="display-6 mb-4">Our Donation Causes Around the World</h1>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="85"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">85%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/carousel-2.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Healthy Food</a>
-                            <p>Every contribution helps us deliver healthy, life-sustaining meals to children in need. Good nutrition is not a luxury — it is the foundation for survival, growth, and opportunity.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/gallery/gallery24.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Water Treatment</a>
-                            <p>Your donation supports clean and safe water initiatives for vulnerable communities. Through proper water treatment, we prevent waterborne diseases and protect children and families from serious health risks.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="75"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">75%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/edusupport.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Education</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Education Support</a>
-                            <p>Your donation helps provide school fees, learning materials, and academic support to children in need. Education opens doors to opportunity and builds a path out of poverty.
-                            </p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="85"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">85%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/gallery/gallery9.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Community</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Widows Support</a>
-<p>Your donation helps widows rebuild their lives through financial assistance, skills training, and emotional support. We empower them to regain stability, independence, and dignity.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
-                                </div>
-                            </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/carousel-3.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Medical Outreach Program</a>
-<p>Supporting free medical camps, essential medicines, and preventive healthcare services.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/carousel-2.jpg" class="card-img-top donation-card-img" alt="Healthy Food">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Health</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Healthy Food</h5>
+                            <p class="card-text text-muted">Every contribution helps us deliver healthy, life-sustaining meals to children in need.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 85%"></div>
                                 </div>
                             </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/gallery/gallery12.jpg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Community</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Orphan Support</a>
-<p>Your donation provides orphans with food, shelter, education, and emotional care. We ensure every child feels protected, valued, and given a fair chance at life.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/gallery/gallery24.jpg" class="card-img-top donation-card-img" alt="Water Treatment">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Health</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Water Treatment</h5>
+                            <p class="card-text text-muted">Your donation supports clean and safe water initiatives for vulnerable communities.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/edusupport.jpg" class="card-img-top donation-card-img" alt="Education Support">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Education</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Education Support</h5>
+                            <p class="card-text text-muted">Your donation helps provide school fees, learning materials, and academic support.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/gallery/gallery9.jpg" class="card-img-top donation-card-img" alt="Widows Support">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Community</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Widows Support</h5>
+                            <p class="card-text text-muted">Your donation helps widows rebuild their lives through financial assistance and training.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="donation-item d-flex h-100 p-4">
-                        <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
-                            <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="75"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">75%</span>
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/carousel-3.jpg" class="card-img-top donation-card-img" alt="Medical Outreach">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Health</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Medical Outreach Program</h5>
+                            <p class="card-text text-muted">Supporting free medical camps, essential medicines, and preventive healthcare services.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 95%"></div>
                                 </div>
                             </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
-                        </div>
-                        <div class="donation-detail">
-                            <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/residence.jpeg" alt="">
-                                <a href="#!"
-                                    class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Empowerment</a>
-                            </div>
-                            <a href="#!" class="h3 d-inline-block">Women Empowerment Initiative</a>
-<p>Your donation supports women through skills training, mentorship, and economic opportunities. We empower them to become financially independent and confident leaders in their communities.</p>
-                            <a href="payment.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/gallery/gallery12.jpg" class="card-img-top donation-card-img" alt="Orphan Support">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Community</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Orphan Support</h5>
+                            <p class="card-text text-muted">Your donation provides orphans with food, shelter, education, and emotional care.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="card h-100 border-0 shadow">
+                        <img src="img/residence.jpeg" class="card-img-top donation-card-img" alt="Women Empowerment">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">Empowerment</span>
+                                <span class="text-muted">Goal: $10,000</span>
+                            </div>
+                            <h5 class="card-title">Women Empowerment Initiative</h5>
+                            <p class="card-text text-muted">Your donation supports women through skills training, mentorship, and economic opportunities.</p>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Raised: $8,000</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress progress-horizontal">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <a href="payment.html" class="btn btn-primary w-100 py-2"><i class="fa fa-plus me-2"></i>Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- Donation End -->
-
+    <!-- Donation Causes End -->
 
 
     <!-- Newsletter Start -->
@@ -534,7 +524,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
+                    <h1 class="display-6 mb-4 text-white">Subscribe the Newsletter</h1>
                     <div class="position-relative w-100 mb-2">
                         <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
                             style="height: 60px;">
@@ -603,7 +593,9 @@
                         <div class="col-4">
                             <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="">
                         </div>
-                        <a href="gallery.html">Click here to See all Photos</a>
+                        <div class="col-12 mt-2">
+                            <a href="gallery.html" class="text-white text-decoration-underline">Click here to See all Photos</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -611,12 +603,6 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="fw-semi-bold" href="#!">Impact World Programs</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        
                     </div>
                 </div>
             </div>
@@ -640,7 +626,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-<script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 </body>
 
 </html>
