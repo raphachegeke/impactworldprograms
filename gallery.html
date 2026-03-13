@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
@@ -29,7 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    
+
     <style>
         /* Gallery Item Styles */
         .gallery-item {
@@ -37,14 +38,14 @@
             overflow: hidden;
             border-radius: 15px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .gallery-img {
@@ -93,6 +94,7 @@
             font-weight: 700;
             margin-bottom: 5px;
             font-family: 'Josefin Sans', sans-serif;
+            color: #ff0080;
         }
 
         .gallery-desc {
@@ -140,14 +142,15 @@
             border-radius: 50%;
             opacity: 1;
             z-index: 1051;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
@@ -170,7 +173,8 @@
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
                 <h4 class="d-lg-none m-0">Menu</h4>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -185,9 +189,13 @@
                         <a href="waste.html" class="nav-item nav-link">Widows & Poverty</a>
                     </div>
                     <div class="d-none d-lg-flex ms-auto">
-                        <a class="btn btn-square btn-dark ms-2" href="https://x.com/impact_world_p"><i class="fab fa-x"></i></a>
-                        <a class="btn btn-square btn-dark ms-2" href="https://www.facebook.com/profile.php?id="><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-dark ms-2" href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="https://x.com/impact_world_p"><i
+                                class="fab fa-x"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="https://www.facebook.com/profile.php?id="><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2"
+                            href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </nav>
@@ -201,8 +209,8 @@
             <h1 class="display-3 animated slideInDown">Our Gallery</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gallery</li>
                 </ol>
             </nav>
         </div>
@@ -213,34 +221,19 @@
     <div class="container py-5">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h2 class="fw-bold text-primary">Moments of Impact</h2>
-            <p class="text-muted">Browse through our collection of images showcasing our community initiatives, events, and the people we serve.</p>
+            <p class="text-muted">Browse through our collection of images showcasing our community initiatives, events,
+                and the people we serve.</p>
         </div>
 
         <div class="row g-4">
-            
+
             <!-- Gallery Item 1 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Community Outreach" 
-                     data-desc="Engaging with local communities to understand their needs and provide essential support services." 
-                     data-img="img/gallery/gallery1.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Community Outreach"
+                    data-desc="Engaging with local communities to understand their needs and provide essential support services."
+                    data-img="img/gallery/gallery1.jpg">
                     <img src="img/gallery/gallery1.jpg" class="gallery-img" alt="Community Outreach">
-                    <div class="gallery-overlay">
-                        <div class="overlay-content">
-                            <h5 class="gallery-title">Community Outreach</h5>
-                            <p class="gallery-desc">Engaging with local communities to understand their needs.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Education Support" 
-                     data-desc="Providing learning materials and scholarships to underprivileged children to secure their future." 
-                     data-img="img/gallery/gallery2.jpg">
-                    <img src="img/gallery/gallery2.jpg" class="gallery-img" alt="Education Support">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <h5 class="gallery-title">Education Support</h5>
@@ -250,13 +243,76 @@
                 </div>
             </div>
 
+            <!-- Gallery Item 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Education Support"
+                    data-desc="Providing learning materials and scholarships to underprivileged children to secure their future."
+                    data-img="img/gallery/gallery2.jpg">
+                    <img src="img/gallery/gallery2.jpg" class="gallery-img" alt="Education Support">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h5 class="gallery-title">Community Outreach</h5>
+                            <p class="gallery-desc">Engaging with local communities to understand their needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Gallery Item 3 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Health Camp" 
-                     data-desc="Free medical check-ups and health awareness drives organized in rural areas." 
-                     data-img="img/gallery/gallery3.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Health Camp"
+                    data-desc="Free medical check-ups and health awareness drives organized in rural areas."
+                    data-img="img/gallery/gallery3.jpg">
                     <img src="img/gallery/gallery3.jpg" class="gallery-img" alt="Health Camp">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h5 class="gallery-title">Education Support</h5>
+                            <p class="gallery-desc">Providing learning materials and scholarships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Clean Water Initiative"
+                    data-desc="Installing water pumps and filtration systems to ensure access to clean drinking water."
+                    data-img="img/gallery/gallery4.jpg">
+                    <img src="img/gallery/gallery4.jpg" class="gallery-img" alt="Clean Water Initiative">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h5 class="gallery-title">Education Support</h5>
+                            <p class="gallery-desc">Providing learning materials and scholarships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Women Empowerment"
+                    data-desc="Skill development workshops aimed at making widows and women self-reliant."
+                    data-img="img/gallery/gallery5.jpg">
+                    <img src="img/gallery/gallery5.jpg" class="gallery-img" alt="Women Empowerment">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h5 class="gallery-title">Education Support</h5>
+                            <p class="gallery-desc">Providing learning materials and scholarships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Food Distribution"
+                    data-desc="Distributing food packages to families facing hunger and malnutrition."
+                    data-img="img/gallery/gallery6.jpg">
+                    <img src="img/gallery/gallery6.jpg" class="gallery-img" alt="Food Distribution">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <h5 class="gallery-title">Health Camp</h5>
@@ -266,29 +322,27 @@
                 </div>
             </div>
 
-            <!-- Gallery Item 4 -->
+            <!-- Gallery Item 7 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Clean Water Initiative" 
-                     data-desc="Installing water pumps and filtration systems to ensure access to clean drinking water." 
-                     data-img="img/gallery/gallery4.jpg">
-                    <img src="img/gallery/gallery4.jpg" class="gallery-img" alt="Clean Water Initiative">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Youth Sports"
+                    data-desc="Organizing sports events to promote teamwork and healthy living among the youth."
+                    data-img="img/gallery/gallery7.jpg">
+                    <img src="img/gallery/gallery7.jpg" class="gallery-img" alt="Youth Sports">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
-                            <h5 class="gallery-title">Clean Water Initiative</h5>
-                            <p class="gallery-desc">Ensuring access to clean drinking water for all.</p>
+                            <h5 class="gallery-title">Health Camp</h5>
+                            <p class="gallery-desc">Free medical check-ups and health awareness drives.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Gallery Item 5 -->
+            <!-- Gallery Item 8 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Women Empowerment" 
-                     data-desc="Skill development workshops aimed at making widows and women self-reliant." 
-                     data-img="img/gallery/gallery5.jpg">
-                    <img src="img/gallery/gallery5.jpg" class="gallery-img" alt="Women Empowerment">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Tree Planting"
+                    data-desc="Environmental conservation efforts by planting trees to combat climate change."
+                    data-img="img/gallery/gallery8.jpg">
+                    <img src="img/gallery/gallery8.jpg" class="gallery-img" alt="Tree Planting">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <h5 class="gallery-title">Women Empowerment</h5>
@@ -298,60 +352,11 @@
                 </div>
             </div>
 
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Food Distribution" 
-                     data-desc="Distributing food packages to families facing hunger and malnutrition." 
-                     data-img="img/gallery/gallery6.jpg">
-                    <img src="img/gallery/gallery6.jpg" class="gallery-img" alt="Food Distribution">
-                    <div class="gallery-overlay">
-                        <div class="overlay-content">
-                            <h5 class="gallery-title">Food Distribution</h5>
-                            <p class="gallery-desc">Supporting families facing hunger and malnutrition.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gallery Item 7 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Youth Sports" 
-                     data-desc="Organizing sports events to promote teamwork and healthy living among the youth." 
-                     data-img="img/gallery/gallery7.jpg">
-                    <img src="img/gallery/gallery7.jpg" class="gallery-img" alt="Youth Sports">
-                    <div class="gallery-overlay">
-                        <div class="overlay-content">
-                            <h5 class="gallery-title">Youth Sports</h5>
-                            <p class="gallery-desc">Promoting teamwork and healthy living.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gallery Item 8 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Tree Planting" 
-                     data-desc="Environmental conservation efforts by planting trees to combat climate change." 
-                     data-img="img/gallery/gallery8.jpg">
-                    <img src="img/gallery/gallery8.jpg" class="gallery-img" alt="Tree Planting">
-                    <div class="gallery-overlay">
-                        <div class="overlay-content">
-                            <h5 class="gallery-title">Tree Planting</h5>
-                            <p class="gallery-desc">Environmental conservation and greening the planet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Gallery Item 9 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Team Building" 
-                     data-desc="Our dedicated staff and volunteers during a strategy and bonding session." 
-                     data-img="img/gallery/gallery9.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Team Building"
+                    data-desc="Our dedicated staff and volunteers during a strategy and bonding session."
+                    data-img="img/gallery/gallery9.jpg">
                     <img src="img/gallery/gallery9.jpg" class="gallery-img" alt="Team Building">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
@@ -364,10 +369,9 @@
 
             <!-- Gallery Item 10 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Charity Walk" 
-                     data-desc="Raising awareness and funds through our annual charity walk event." 
-                     data-img="img/gallery/gallery10.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Charity Walk"
+                    data-desc="Raising awareness and funds through our annual charity walk event."
+                    data-img="img/gallery/gallery10.jpg">
                     <img src="img/gallery/gallery10.jpg" class="gallery-img" alt="Charity Walk">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
@@ -380,10 +384,10 @@
 
             <!-- Gallery Item 11 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Orphanage Visit" 
-                     data-desc="Spending quality time with children at the local orphanage, sharing gifts and joy." 
-                     data-img="img/gallery/gallery11.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Orphanage Visit"
+                    data-desc="Spending quality time with children at the local orphanage, sharing gifts and joy."
+                    data-img="img/gallery/gallery11.jpg">
                     <img src="img/gallery/gallery11.jpg" class="gallery-img" alt="Orphanage Visit">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
@@ -396,20 +400,21 @@
 
             <!-- Gallery Item 12 -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Sanitation Drive" 
-                     data-desc="Cleaning up local markets and streets to promote hygiene and sanitation." 
-                     data-img="img/gallery/gallery12.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Sanitation Drive"
+                    data-desc="Cleaning up local markets and streets to promote hygiene and sanitation."
+                    data-img="img/gallery/gallery12.jpg">
                     <img src="img/gallery/gallery12.jpg" class="gallery-img" alt="Sanitation Drive">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
-                            <h5 class="gallery-title">Sanitation Drive</h5>
-                            <p class="gallery-desc">Promoting hygiene and sanitation in public spaces.</p>
+                            <h5 class="gallery-title">Community Outreach</h5>
+                            <p class="gallery-desc">Engaging with local communities to understand their needs.</p>
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Repeat similar blocks for gallery13 to gallery58 -->
             <!-- For brevity, I have included the first 12 items. 
                  You can copy the block above and change the src, data-title, and data-desc for the remaining images. 
@@ -417,10 +422,10 @@
                  Example for gallery13:
             -->
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Community Training" 
-                     data-desc="Educational workshop on financial literacy and savings for rural families." 
-                     data-img="img/gallery/gallery13.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Community Training"
+                    data-desc="Educational workshop on financial literacy and savings for rural families."
+                    data-img="img/gallery/gallery13.jpg">
                     <img src="img/gallery/gallery13.jpg" class="gallery-img" alt="Community Training">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
@@ -430,39 +435,40 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Hospital Visit" 
-                     data-desc="Donating medical supplies to local clinics to improve healthcare services." 
-                     data-img="img/gallery/gallery14.jpg">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Hospital Visit"
+                    data-desc="Donating medical supplies to local clinics to improve healthcare services."
+                    data-img="img/gallery/gallery14.jpg">
                     <img src="img/gallery/gallery14.jpg" class="gallery-img" alt="Hospital Visit">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
-                            <h5 class="gallery-title">Hospital Visit</h5>
-                            <p class="gallery-desc">Supporting local healthcare facilities.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                     data-title="Agricultural Support" 
-                     data-desc="Providing seeds and tools to farmers to boost food security." 
-                     data-img="img/gallery/gallery15.jpg">
-                    <img src="img/gallery/gallery15.jpg" class="gallery-img" alt="Agricultural Support">
-                    <div class="gallery-overlay">
-                        <div class="overlay-content">
-                            <h5 class="gallery-title">Agricultural Support</h5>
-                            <p class="gallery-desc">Boosting food security for local farmers.</p>
+                            <h5 class="gallery-title">Clean Water Initiative</h5>
+                            <p class="gallery-desc">Ensuring access to clean drinking water for all.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-             <!-- Note: Continue this pattern for gallery16.jpg through gallery58.jpg -->
-             <!-- I have provided the styling and structure. You can duplicate the blocks for the remaining images. -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-title="Agricultural Support"
+                    data-desc="Providing seeds and tools to farmers to boost food security."
+                    data-img="img/gallery/gallery15.jpg">
+                    <img src="img/gallery/gallery15.jpg" class="gallery-img" alt="Agricultural Support">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h5 class="gallery-title">Education Support</h5>
+                            <p class="gallery-desc">Providing learning materials and scholarships.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note: Continue this pattern for gallery16.jpg through gallery58.jpg -->
+            <!-- I have provided the styling and structure. You can duplicate the blocks for the remaining images. -->
 
         </div>
     </div>
@@ -495,10 +501,16 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254711517947</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>admin@impactworldprograms.org</p>
                     <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-primary me-2" href="https://x.com/impact_world_p"><i class="fab fa-x-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/profile.php?id=61567162015132"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.youtube.com/@impactworldprograms"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://x.com/impact_world_p"><i
+                                class="fab fa-x-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2"
+                            href="https://www.facebook.com/profile.php?id=61567162015132"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary me-2"
+                            href="https://www.youtube.com/@impactworldprograms"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary me-2"
+                            href="https://www.instagram.com/impact_world_programs/?utm_source=ig_web_button_share_sheet"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -563,12 +575,12 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
+
     <!-- Custom Script for Modal -->
     <script>
         // This script handles the click event to populate the modal with specific image data
         document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 const imgSrc = this.getAttribute('data-img');
                 const title = this.getAttribute('data-title');
                 const desc = this.getAttribute('data-desc');
