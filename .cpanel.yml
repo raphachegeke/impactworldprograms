@@ -1,8 +1,25 @@
 ---
 deployment:
   tasks:
-    # Set the deployment path
     - export DEPLOYPATH=/home/impactwo/public_html/
 
-    # Copy all files in root except hidden ones
-    - for file in *; do /bin/cp -R "$file" $DEPLOYPATH; done
+    # HTML files
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp about.html $DEPLOYPATH
+    - /bin/cp contact.html $DEPLOYPATH
+    - /bin/cp service.html $DEPLOYPATH
+    - /bin/cp donation.html $DEPLOYPATH
+    - /bin/cp event.html $DEPLOYPATH
+    - /bin/cp gallery.html $DEPLOYPATH
+    - /bin/cp payment.html $DEPLOYPATH
+    - /bin/cp payment1.html $DEPLOYPATH
+    - /bin/cp team.html $DEPLOYPATH
+    - /bin/cp testimonial.html $DEPLOYPATH
+    - /bin/cp waste.html $DEPLOYPATH
+    - /bin/cp 404.html $DEPLOYPATH
+
+    # Directories
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R img $DEPLOYPATH
+    - /bin/cp -R lib $DEPLOYPATH
