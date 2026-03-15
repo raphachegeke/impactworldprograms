@@ -379,24 +379,62 @@
     <!-- Testimonial End -->
 
 
-    <!-- Newsletter Start (unchanged) -->
-    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
-                    <div class="position-relative w-100 mb-2">
-                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
-                            style="height: 60px;">
-                        <button type="button"
-                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+
+<!-- Newsletter Start -->
+<div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="display-6 text-white mb-4">Subscribe the Newsletter</h1>
+                <p class="text-white mb-4">Stay updated with our latest activities and impact stories.</p>
+
+                <form id="newsletterForm" action="https://formspree.io/f/mbdadzlk" method="POST">
+                    <div class="position-relative w-100" style="max-width: 500px; margin: auto;">
+                        <input 
+                            class="form-control border-0 w-100 ps-4 pe-5 rounded-pill" 
+                            type="email"
+                            name="email"
+                            placeholder="Enter Your Email"
+                            required
+                            style="height: 60px;"
+                        >
+
+                        <button 
+                            type="submit"
+                            class="btn btn-secondary py-2 px-4 position-absolute top-0 end-0 mt-2 me-2 rounded-pill">
+                            <i class="fa fa-paper-plane me-2"></i>Subscribe
+                        </button>
                     </div>
-                </div>
+                </form>
+
             </div>
         </div>
     </div>
-    <!-- Newsletter End -->
+</div>
+<!-- Newsletter End -->
+
+<script>
+const form = document.getElementById("newsletterForm");
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+        alert("✅ You have successfully subscribed to our newsletter!");
+        form.reset();
+    } else {
+        alert("❌ Something went wrong. Please try again.");
+    }
+});
+</script>
 
 
     <!-- Footer Start (unchanged) -->
